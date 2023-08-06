@@ -1,0 +1,26 @@
+{
+    "name": "s4mpp/element",
+    "description": "View components for Laravel",
+    "authors": [
+        {
+            "name": "Samuel Pacheco",
+            "email": "S4mpp.dev@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "S4mpp\\Element\\": "src/"
+        }
+    },
+    "require": {
+        "php": "^8.1",
+        "laravel/framework": "^10.10"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "S4mpp\\Element\\Providers\\ElementServiceProvider"
+            ]
+        }
+    }
+}
