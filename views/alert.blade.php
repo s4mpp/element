@@ -1,5 +1,5 @@
 @if (!empty($flash_message))
-	<div class="alert alert-success pb-2">{{ $flash_message }}</div>
+	<div class="alert alert-success">{{ $flash_message }}</div>
 @endif
 
 @if($errors->any())
