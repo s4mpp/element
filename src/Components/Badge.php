@@ -17,9 +17,9 @@ class Badge extends Component
      */
     public function __construct(public $provider)
     {
-        $this->color = $provider->color();
+        $this->color = (method_exists($provider, 'color')) ? $provider->color() : null;
         
-		$this->label = $provider->label();
+		$this->label = (method_exists($provider, 'label')) ? $provider->label() : $provider;
     }
 
     /**
