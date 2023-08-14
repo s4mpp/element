@@ -4,18 +4,21 @@ namespace S4mpp\Element\Components;
 
 use Illuminate\View\Component;
 
-class Card extends Component
+class ItemView extends Component
 {
-    public $title = null;
+    public $title;
+
+    public $content;
 
     /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct(string $title = null)
+    public function __construct(string $title, $content = null)
     {
         $this->title = $title;
+        $this->content = $content;
     }
 
     /**
@@ -25,6 +28,6 @@ class Card extends Component
      */
     public function render()
     {
-        return view('element::card');
+        return view('element::item-view');
     }
 }
