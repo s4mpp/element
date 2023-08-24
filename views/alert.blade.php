@@ -1,11 +1,27 @@
+
 @if (!empty($flash_message))
-	<div class="alert alert-success">{{ $flash_message }}</div>
+ 	<div class="bg-green-100 text-green-700 px-3 py-5 mb-4 rounded-md flex justify-start">
+		<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+			<path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+		</svg>
+	
+		<div class="ms-2">
+			<span>{{ $flash_message }}</span>
+		</div>
+	</div>
 @endif
 
 @if($errors->any())
-	<div class="alert alert-danger pb-2">
-		@foreach ($errors->all() as $error)
-			<p class="mb-2">{!! nl2br($error) !!}</p>
-		@endforeach
+	<div class="bg-red-100 text-red-700 px-3 py-5 mb-4 rounded-md flex justify-start">
+		<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+			<path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m9-.75a9 9 0 11-18 0 9 9 0 0118 0zm-9 3.75h.008v.008H12v-.008z" />
+		</svg>
+
+		<div class="ms-2">
+			<span>{{ $flash_message }}</span>
+			@foreach ($errors->all() as $error)
+				<span>{!! nl2br($error) !!}</span>
+			@endforeach
+		</div>
 	</div>
 @endif

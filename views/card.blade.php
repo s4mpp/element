@@ -1,11 +1,10 @@
-<div class="card card-component border-0 bg-white mb-3 mx-n3 mx-md-0">
+<div class="overflow-hidden bg-white shadow sm:rounded-lg">
     @if($title)
-        <div class="card-body pb-1">
-            <h6 class="mb-0"><strong>{{ $title }}</strong></h6>
+        <div class="border-b border-gray-200 bg-white px-4 py-5 sm:px-6">
+            <h3 class="text-base font-semibold leading-6 text-gray-900">{{ $title }}</h3>
         </div>
     @endif
 
-    <div class="card-body pb-0">
-        {{ $slot }}
-    </div>
+    {{ $slot }}
 </div>
+  
