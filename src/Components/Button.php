@@ -13,7 +13,7 @@ class Button extends Component
     /**
      * Create a new component instance.
      */
-    public function __construct(public bool $full = false, public string $color = 'indigo')
+    public function __construct(public bool $full = false, public string $className = '')
     {}
 
     /**
