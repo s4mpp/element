@@ -13,7 +13,7 @@ class Card extends Component
      *
      * @return void
      */
-    public function __construct(string $title = null)
+    public function __construct(string $title = null, public bool $padding = true, public string $className = '')
     {
         $this->title = $title;
     }

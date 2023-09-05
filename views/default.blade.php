@@ -1,4 +1,5 @@
-<input {{ $attributes }} @class(array_merge($class_feedback, [
+<input {{ $attributes }} @class(array_merge([$className], [
+        'form-input',
         'block',
         'w-full',
         'rounded-md',
@@ -12,33 +13,15 @@
         'placeholder:text-gray-400',
         'focus:ring-2',
         'focus:ring-inset',
-        'focus:ring-indigo-600',
         'sm:text-sm',
         'sm:leading-6',
-        'transition ease-linear duration-200'
-        
+        'transition ease-linear duration-200',
+        'disabled:cursor-not-allowed disabled:bg-gray-50 disabled:text-gray-500 disabled:ring-gray-200'
 ]))
+wire:loading.attr="disabled"
 type="{{ $type }}"
 name="{{ $name }}"
 @if ($required) required="{{ $required }}"   @endif
 @if ($accept) accept="{{ $accept }}"   @endif
 id="{{ $id }}"
 value="{{ $value ?? $slot }}">
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

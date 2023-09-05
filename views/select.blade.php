@@ -1,4 +1,5 @@
-<select {{ $attributes }} @class(array_merge($class_feedback, [
+<select {{ $attributes }} @class(array_merge([$className], [
+    'form-input',
     'block',
     'w-full',
     'rounded-md',
@@ -11,9 +12,10 @@
     'ring-inset',
     'ring-gray-300',
     'focus:ring-2',
-    'focus:ring-indigo-600',
     'sm:text-sm',
     'sm:leading-6',
+    'transition ease-linear duration-200',
+    'disabled:cursor-not-allowed disabled:bg-gray-50 disabled:text-gray-500 disabled:ring-gray-200'
 ]))
     name="{{ $name }}"
     @if ($required) required="{{ $required }}"   @endif
