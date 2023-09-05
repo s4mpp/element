@@ -27,11 +27,9 @@ class Input extends Component
         public ?string $type = null,
         public ?string $accept = null,
         public ?string $title = null,
-        public ?string $class = null,
         public $selected = null,
         public bool $required = false,
-        public ?string $inputGroupStart = null,
-        public ?string $inputGroupEnd = null)
+        public string $className = '')
     {
         $this->value = ($this->_isFillable($type)) ? old($name) : null;
 
@@ -39,12 +37,12 @@ class Input extends Component
 
         $this->id = 'input_'.$type.'_'.$name;
 
-        $errors = Session::get('errors');
+        // $errors = Session::get('errors');
 
-        $this->class_feedback = array_merge([$this->class], [
-            'is-valid' => ($errors && !$errors->has($this->name_feedback) && !empty((string)old($name))),
-            'is-invalid' => ($errors && $errors->has($this->name_feedback)),
-        ]);
+        // $this->class_feedback = array_merge([$this->class], [
+        //     'is-valid' => ($errors && !$errors->has($this->name_feedback) && !empty((string)old($name))),
+        //     'is-invalid' => ($errors && $errors->has($this->name_feedback)),
+        // ]);
 
         $this->view_input = $this->_getView($type);
     }
