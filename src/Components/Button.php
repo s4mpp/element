@@ -14,7 +14,9 @@ class Button extends Component
      * Create a new component instance.
      */
     public function __construct(public bool $full = false, public string $className = '')
-    {}
+    {
+        
+    }
 
     /**
      * Get the view / contents that represent the component.
