@@ -13,7 +13,7 @@
 			||
 			(!old() && isset($checked) && $checked)
 		)
-			checked 
+			checked=true
 		@endif
 
 		 {{ $attributes }} value="{{ $value }}" id="{{ $id_check }}" type="{{ $type }}" name="{{ $name }}" 

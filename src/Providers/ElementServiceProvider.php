@@ -13,6 +13,7 @@ use S4mpp\Element\Components\Button;
 use Illuminate\Support\Facades\Blade;
 use S4mpp\Element\Components\ItemView;
 use Illuminate\Support\ServiceProvider;
+use S4mpp\Element\Components\SlideOver;
 
 class ElementServiceProvider extends ServiceProvider 
 {
@@ -35,6 +36,8 @@ class ElementServiceProvider extends ServiceProvider
 		Blade::component('check', Check::class);
 		
 		Blade::component('option', Option::class);
+		
+		Blade::component('slide-over', SlideOver::class);
 				
 		$this->loadViewsFrom(__DIR__.'/../../views', 'element');
     }
