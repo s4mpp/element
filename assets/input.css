@@ -3,16 +3,3 @@
 @tailwind utilities;
 
 [x-cloak] { display: none !important; }
-
-@layer components
-{
-	/* .form-input
-    {
-        @apply focus:ring-blue-600
-    }
-
-    input[type=checkbox]
-    {
-        @apply text-blue-600 
-    } */
-}
