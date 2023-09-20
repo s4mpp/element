@@ -1,4 +1,5 @@
 <select {{ $attributes }} @class(array_merge([$className], [
+    'focus:ring-gray-600',
     'form-input',
     'block',
     'w-full',

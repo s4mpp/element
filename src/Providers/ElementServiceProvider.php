@@ -40,5 +40,9 @@ class ElementServiceProvider extends ServiceProvider
 		Blade::component('slide-over', SlideOver::class);
 				
 		$this->loadViewsFrom(__DIR__.'/../../views', 'element');
+
+		$this->publishes([
+			__DIR__.'/../../dist/style.css' => public_path('vendor/s4mpp/element.css'), 
+		], 'element-style');
     }
 }

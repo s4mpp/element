@@ -2,7 +2,7 @@
 	@class(array_merge([$className], [
 		'flex  w-full' => $full,
 		'cursor-not-allowed' => (isset($disabled) && $disabled),
-  		'items-center ease-linear transition disabled:cursor-not-allowed inline-flex justify-center gap-x-1.5 rounded-md  px-3 py-2 text-sm font-semibold  shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2',
+  		'bg-gray-200 hover:bg-gray-300 text-gray-800 items-center ease-linear transition disabled:cursor-not-allowed inline-flex justify-center gap-x-1.5 rounded-md  px-3 py-2 text-sm font-semibold  shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2',
 	])) 
 	
 	x-bind:disabled="(typeof loading != 'undefined' ? loading : false)"
