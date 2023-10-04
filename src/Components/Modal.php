@@ -6,21 +6,22 @@ use Closure;
 use Illuminate\View\Component;
 use Illuminate\Contracts\View\View;
 
-class Button extends Component
+class Modal extends Component
 {
-    public $element = 'button';
-
+ 
     /**
      * Create a new component instance.
      */
-    public function __construct(public bool $full = false, public string $className = '', public bool $disabled = false, public bool $loading = true)
-    {}
+    public function __construct(public string $idModal,  public string $route, public ?string $title = null, public ?string $method = null, public bool $danger = false)
+    {
+
+    }
 
     /**
      * Get the view / contents that represent the component.
      */
     public function render(): View|Closure|string
     {
-        return view('element::button', ['attr_disabled' => $this->disabled]);
+        return view('element::modal');
     }
 }

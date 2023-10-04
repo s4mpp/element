@@ -13,7 +13,7 @@ class Link extends Component
     /**
      * Create a new component instance.
      */
-    public function __construct(public bool $full = false, public string $className = '', public bool $loading = true)
+    public function __construct(public bool $full = false, public string $className = '', public bool $disabled = false, public bool $loading = true)
     {}
 
     /**
@@ -21,6 +21,6 @@ class Link extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('element::button');
+        return view('element::button', ['attr_disabled' => false]);
     }
 }

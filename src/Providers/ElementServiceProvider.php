@@ -2,18 +2,20 @@
 
 namespace S4mpp\Element\Providers;
 
-use S4mpp\Element\Components\Check;
-use S4mpp\Element\Components\Input;
 use S4mpp\Element\Components\Card;
 use S4mpp\Element\Components\Link;
-use S4mpp\Element\Components\Option;
 use S4mpp\Element\Components\Alert;
 use S4mpp\Element\Components\Badge;
+use S4mpp\Element\Components\Check;
+use S4mpp\Element\Components\Input;
+use S4mpp\Element\Components\Modal;
 use S4mpp\Element\Components\Button;
+use S4mpp\Element\Components\Option;
 use Illuminate\Support\Facades\Blade;
 use S4mpp\Element\Components\ItemView;
 use Illuminate\Support\ServiceProvider;
 use S4mpp\Element\Components\SlideOver;
+use S4mpp\Element\Components\Notification;
 
 class ElementServiceProvider extends ServiceProvider 
 {
@@ -38,6 +40,10 @@ class ElementServiceProvider extends ServiceProvider
 		Blade::component('option', Option::class);
 		
 		Blade::component('slide-over', SlideOver::class);
+		
+		Blade::component('notification', Notification::class);
+		
+		Blade::component('modal', Modal::class);
 				
 		$this->loadViewsFrom(__DIR__.'/../../views', 'element');
     }

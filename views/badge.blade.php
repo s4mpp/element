@@ -1,7 +1,7 @@
 
-@if($color)
+@if($color_badge)
     @php
-        switch ($color) {
+        switch ($color_badge) {
             case 'red':
                 $bg = 'bg-red-100';
                 $text = 'text-red-600';
@@ -59,13 +59,13 @@
                 break;
         }
     @endphp
-    <span class="inline-flex items-center gap-x-1.5 rounded-full {{ $bg }} px-2 py-1 text-xs font-medium {{ $text }} ring-1 ring-inset {{ $ring }}">
+    <span class="inline-flex whitespace-nowrap items-center gap-x-1.5 h-6 rounded-full {{ $bg }} px-2 py-1 text-xs font-medium {{ $text }} ring-1 ring-inset {{ $ring }}">
         <svg class="h-1.5 w-1.5 {{ $fill }}" viewBox="0 0 6 6" aria-hidden="true">
           <circle cx="3" cy="3" r="3" />
         </svg>
-        {{ $label }}
+        {{ $label_badge ?? $slot }}
     </span>
 @else
-    {{ $label }}
+    {{ $label_badge ?? $slot }}
 @endif
 
