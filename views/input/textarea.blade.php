@@ -1,1 +1,1 @@
-<textarea @class($class_input) {{ $attributes }} name="{{ $name }}" id="{{ $id }}">{{ old($name) ?? $slot }}</textarea>
+<textarea @class($class_input) {{ $attributes }} name="{{ $name }}" id="{{ $attributes['id'] ?? $id ?? null }}">{{ old($name) ?? $slot }}</textarea>

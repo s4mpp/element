@@ -2,10 +2,10 @@
 	
 	<input {{ $attributes }} @class(array_merge($class_input, ['pr-10'])) wire:loading.attr="disabled" 
 	x-bind:type="(showPassword ? 'text' : 'password')"
-	name="{{ $name }}" id="{{ $id }}">
+	name="{{ $name }}" id="{{ $attributes['id'] ?? $id ?? null }}">
 
 	<div class="text-gray-400 text-sm absolute inset-y-0 right-0 flex items-start pt-2 pr-3 ">
-		<button type="button" x-on:click="showPassword = !showPassword">
+		<button type="button" x-on:click="showPassword = !showPassword" tabindex="-1">
 			<div x-show="!showPassword" x-cloak>
 				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5">
 					<path d="M12 15a3 3 0 100-6 3 3 0 000 6z" />

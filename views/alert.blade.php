@@ -22,10 +22,14 @@
 		</div>
 
 		<div class="ms-2 text-sm">
-			<span>{{ $flash_message }}</span>
-			@foreach ($errors->all() as $error)
-				<span>{!! nl2br($error) !!}</span>
-			@endforeach
+			<span>{{ $flash_message ?? 'Erros encontrados:' }}</span>
+			@if($errors->all())
+				<div class="mt-3">
+					@foreach ($errors->all() as $error)
+					<p>{!! nl2br($error) !!}</p>
+					@endforeach
+				</div>
+			@endif
 		</div>
 	</div>
 @endif

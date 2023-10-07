@@ -17,7 +17,7 @@
 
 <div>
     @if(!empty($title))
-        <label for="{{ $id }}" class="mb-1  block text-sm font-medium text-gray-900">{{ $title }}</label>
+        <label for="{{ $id ?? null }}" class="mb-1  block text-sm font-medium text-gray-900">{{ $title }}</label>
     @endif
 
     <div class="relative">
