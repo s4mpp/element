@@ -5,10 +5,8 @@ namespace S4mpp\Element\Components;
 use Illuminate\View\Component;
 
 class Check extends Component
-{
-    public array $class_input = [];
-    
-    public function __construct(public string $value, public bool $checked = false, public string $className = '')
+{    
+    public function __construct(public string $type = 'checkbox', public ?string $name = null, public ?string $value = null, public bool $checked = false)
     {}
 
     /**
@@ -18,6 +16,6 @@ class Check extends Component
      */
     public function render()
     {
-        return view('element::checkbox');
+        return view('element::input.checkable');
     }
 }

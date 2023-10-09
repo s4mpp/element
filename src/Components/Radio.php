@@ -4,9 +4,9 @@ namespace S4mpp\Element\Components;
 
 use Illuminate\View\Component;
 
-class Option extends Component
-{
-    public function __construct(public ?string $value = null, public bool $selected = false)
+class Radio extends Component
+{    
+    public function __construct(public string $type = 'radio', public ?string $name = null, public ?string $value = null, public bool $checked = false)
     {}
 
     /**
@@ -16,6 +16,6 @@ class Option extends Component
      */
     public function render()
     {
-        return view('element::input.option');
+        return view('element::input.checkable');
     }
 }

@@ -14,8 +14,10 @@ use S4mpp\Element\Components\Option;
 use Illuminate\Support\Facades\Blade;
 use S4mpp\Element\Components\ItemView;
 use Illuminate\Support\ServiceProvider;
+use S4mpp\Element\Components\Icon;
 use S4mpp\Element\Components\SlideOver;
 use S4mpp\Element\Components\Notification;
+use S4mpp\Element\Components\Radio;
 
 class ElementServiceProvider extends ServiceProvider 
 {
@@ -33,18 +35,27 @@ class ElementServiceProvider extends ServiceProvider
 		
 		Blade::component('link', Link::class);
 
-		Blade::component('input', Input::class);
-		
-		Blade::component('check', Check::class);
-		
-		Blade::component('option', Option::class);
-		
 		Blade::component('slide-over', SlideOver::class);
 		
 		Blade::component('notification', Notification::class);
 		
 		Blade::component('modal', Modal::class);
+		
+		Blade::component('icon', Icon::class);
+
+		$this->formComponents();
 				
 		$this->loadViewsFrom(__DIR__.'/../../views', 'element');
     }
+
+	private function formComponents()
+	{
+		Blade::component('input', Input::class);
+		
+		Blade::component('check', Check::class);
+		
+		Blade::component('radio', Radio::class);
+		
+		Blade::component('option', Option::class);
+	}
 }

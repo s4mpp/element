@@ -9,4 +9,4 @@
         selected 
     @endif
 
-value="{{ $value }}">{{ $slot }}</option>
+value="{{ $value ?? $slot ?? null }}">{{ $slot ?? null }}</option>

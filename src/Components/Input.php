@@ -13,22 +13,27 @@ class Input extends Component
     
     public ?string $view_input;
 
+    public ?string $name_input;
+    
     public $value;
-
+    
     /**
      * Create a new component instance.
      */
     public function __construct(
         public ?string $title = null,
         public ?string $name = null,
-        public ?string $type = 'text',
-        public string $className = '')
+        public ?string $type = null)
     {
-        $this->value = old($name);
+        $old = old($name);
+
+        $this->value = !empty($old) ? $old : null;
 
         $this->id = 'input_'.$type.'_'.$name.'_'.rand();
 
-        $this->view_input = in_array($type, ['textarea', 'select', 'password']) ? $type : 'default';
+        $this->view_input = $this->_getViewInput($type);
+
+        $this->name_input = $name;
     }
 
     /**
@@ -37,5 +42,22 @@ class Input extends Component
     public function render(): View|Closure|string
     {
         return view('element::input.main', ['type' => $this->type]);
+    }
+
+    private function _getViewInput(string $type = null)
+    {
+        switch($type)
+        {
+            case 'textarea':
+            case 'select':
+            case 'password':
+                return $type;
+                
+            case null:
+                return null;
+
+            default:
+                return 'default';
+        }
     }
 }
