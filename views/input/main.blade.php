@@ -37,7 +37,7 @@
                 </div>
             @endisset
         @else
-                {{ $slot }}
+            {{ $slot }}
         @endif
     </div>
 </div>

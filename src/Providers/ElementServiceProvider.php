@@ -41,7 +41,6 @@ class ElementServiceProvider extends ServiceProvider
 		
 		Blade::component('modal', Modal::class);
 		
-		Blade::component('icon', Icon::class);
 
 		$this->formComponents();
 				

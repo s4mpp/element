@@ -60,9 +60,17 @@
         }
     @endphp
     <span class="inline-flex whitespace-nowrap items-center gap-x-1.5 h-6 rounded-full {{ $bg }} px-2 py-1 text-xs font-medium {{ $text }} ring-1 ring-inset {{ $ring }}">
-        <svg class="h-1.5 w-1.5 {{ $fill }}" viewBox="0 0 6 6" aria-hidden="true">
-          <circle cx="3" cy="3" r="3" />
-        </svg>
+        
+        @if($loading)
+            <svg class="h-1.5 w-1.5 {{ $fill }} animate-ping" viewBox="0 0 6 6" aria-hidden="true">
+                <circle cx="3" cy="3" r="3" />
+            </svg>
+        @else
+            <svg class="h-1.5 w-1.5 {{ $fill }}" viewBox="0 0 6 6" aria-hidden="true">
+                <circle cx="3" cy="3" r="3" />
+            </svg>
+        @endif
+
         {{ $label_badge ?? $slot }}
     </span>
 @else
