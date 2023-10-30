@@ -40,7 +40,6 @@ class ElementServiceProvider extends ServiceProvider
 		Blade::component('notification', Notification::class);
 		
 		Blade::component('modal', Modal::class);
-		
 
 		$this->formComponents();
 				
