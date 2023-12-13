@@ -23,7 +23,8 @@ class Input extends Component
     public function __construct(
         public ?string $title = null,
         public ?string $name = null,
-        public ?string $type = null)
+        public ?string $type = null,
+        public ?string $className = null)
     {
         $old = old($name);
 

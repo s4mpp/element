@@ -24,7 +24,7 @@ x-on:show-notification.window="function() {
 	}
 }"
 
-aria-live="assertive" class="pointer-events-none z-40 fixed inset-0 flex items-end px-4 py-6 sm:items-start sm:p-6" >
+aria-live="assertive" class="pointer-events-none z-50 fixed inset-0 flex items-end px-4 py-6 sm:items-start sm:p-6" >
    <div class="flex w-full flex-col items-center space-y-4 sm:items-end">
     <div x-cloak
     x-show="showNotification"

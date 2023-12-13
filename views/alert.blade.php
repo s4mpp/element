@@ -8,7 +8,7 @@
 		</div>
 	
 		<div class="ms-2 text-sm">
-			<span>{{ $flash_message }}</span>
+			<span>{!! $flash_message !!}</span>
 		</div>
 	</div>
 @endif

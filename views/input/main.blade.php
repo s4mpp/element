@@ -9,7 +9,7 @@
     <div class="relative">
         @if($view_input)        
             @php
-                $class_input = [
+                $class_input = array_merge(explode(' ', $className), [
                     'pl-10' => isset($start),
                     'pr-10' => isset($end),
                     'form-input', 'block', 'w-full', 'rounded-md', 'border-0', 'py-1.5', 'shadow-sm',
@@ -20,7 +20,7 @@
                     'focus:ring-2', 'focus:ring-inset',
                     'transition', 'ease-linear', 'duration-200', 
                     'disabled:cursor-not-allowed', 'disabled:bg-gray-50', 'disabled:text-gray-500', 'disabled:ring-gray-200'
-                ];
+                ]);
             @endphp
             
             @isset($start)     

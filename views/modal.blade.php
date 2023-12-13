@@ -26,13 +26,24 @@
 			
 			<div class="bg-white px-4 pt-5 sm:p-6 sm:pb-4">
 				<div  @class(['flex justify-start align-center', 'items-center' => !$subtitle, 'items-start' => $subtitle])>
-					<div class="mx-auto flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full sm:mx-0 sm:h-10 sm:w-10 {{ $danger ? ' bg-red-100' : ' bg-gray-100' }}">
-						<svg class="h-6 w-6 {{ $danger ? ' text-red-600' : ' text-gray-600' }}" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
-						<path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z" />
-						</svg>
-					</div>
-					<div class="text-center sm:ml-4   sm:text-left">
-						<h3 class="text-base font-semibold   text-gray-900" id="modal-title">{{ $title }}</h3>
+					@if($danger)
+						<div class="mx-auto sm:mr-4 flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full sm:mx-0 sm:h-10 sm:w-10 {{ $danger ? ' bg-red-100' : ' bg-gray-100' }}">
+							<svg class="h-6 w-6 text-red-600" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+							<path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z" />
+							</svg>
+						</div>
+					@endif
+					<div class="text-center  w-full sm:text-left">
+
+						<div class="flex  w-full justify-between items-center">
+							<h3 class="text-base font-semibold  text-gray-900" id="modal-title">{{ $title }}</h3>
+							<button x-on:click="{{ $idModal }} = false" type="button" class="text-gray-500 p-2 hover:text-gray-700 transition-colors">
+								<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+									<path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+								</svg>
+							</button>
+						</div>
+
 						@if($subtitle)
 							<div class="mt-2">
 								<p class="text-sm text-gray-500">{{ $subtitle }}</p>
@@ -42,7 +53,7 @@
 				</div>
 			</div>
 
-			<div class="bg-white px-4 pb-4  sm:p-6 sm:pb-4">
+			<div class="bg-white px-4 pb-6 sm:px-6">
 				{{ $slot }}
 			</div>
 		</div>
