@@ -22,9 +22,9 @@
 			x-transition:leave="ease-in duration-200" 
 			x-transition:leave-start="opacity-100 translate-y-0 sm:scale-100"
 			x-transition:leave-end="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95" 
-			class="relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg">
+			class="relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all sm:my-8 w-full sm:max-w-lg">
 			
-			<div class="bg-white px-4 pt-5 sm:p-6 sm:pb-4 mb-4">
+			<div class="px-4 pt-5 sm:p-6 sm:pb-4">
 				<div  @class(['flex justify-start align-center', 'items-center' => !$subtitle, 'items-start' => $subtitle])>
 					@if($danger)
 						<div class="mx-auto sm:mr-4 flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full sm:mx-0 sm:h-10 sm:w-10 {{ $danger ? ' bg-red-100' : ' bg-gray-100' }}">
@@ -33,7 +33,7 @@
 							</svg>
 						</div>
 					@endif
-					<div class="text-center  w-full sm:text-left">
+					<div class="w-full sm:text-left">
 
 						<div class="flex  w-full justify-between items-center">
 							<h3 class="text-base font-semibold  text-gray-900" id="modal-title">{{ $title }}</h3>
