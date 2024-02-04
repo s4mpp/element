@@ -23,6 +23,6 @@ class Select extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('element::components.form.main', ['view_input' => 'select']);
+        return view('element::components.form.select');
     }
 }

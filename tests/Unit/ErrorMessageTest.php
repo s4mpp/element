@@ -19,7 +19,7 @@ class ErrorMessageTest extends TestCase
 		$this->assertEquals('', (string)$alert);
 	}
 
-	function test_render_component_with_error()
+	function test_render_component_with_error_default()
 	{
 		session()->put('errors', (new ViewErrorBag)->put('default', (new MessageBag())->add('name', 'Example error')));
 		
@@ -29,5 +29,18 @@ class ErrorMessageTest extends TestCase
 
 		$alert->assertSee('element--alert');
 		$alert->assertSee('Example error');
+	}
+
+	function test_render_component_with_all_errors()
+	{
+		session()->put('errors', (new ViewErrorBag)->put('default', (new MessageBag())->add('name', 'Example error 1')->add('name', 'Example error 2')));
+		
+		$alert = $this->blade(
+			'<x-element::message.error all />'
+		);
+
+		$alert->assertSee('element--alert');
+		$alert->assertSee('Example error 1');
+		$alert->assertSee('Example error 2');
 	}
 }

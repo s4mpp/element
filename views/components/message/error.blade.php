@@ -1,4 +1,3 @@
-@dump($messages)
 @if(!empty($messages))
 	<x-element::alert type="danger" title="{{ $title }}">
 		<div class="space-y-1">

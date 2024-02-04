@@ -12,8 +12,7 @@ class Checkbox extends Component
      * Create a new component instance.
      */
     public function __construct(
-        public ?string $title = null,
-        public ?string $name = null)
+        public ?string $title = null)
     {}
 
     /**
@@ -21,6 +20,6 @@ class Checkbox extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('element::components.form.main');
+        return view('element::components.form.checkbox.index');
     }
 }

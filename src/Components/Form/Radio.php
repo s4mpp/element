@@ -20,6 +20,6 @@ class Radio extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('element::components.form.main');
+        return view('element::components.form.radio.index');
     }
 }
