@@ -8,15 +8,10 @@
 		<div class="space-y-4" >
 			<h2 class="font-semibold mb-1">Basic</h2>
 			<div class="space-y-4">
-				<x-element::form.container title="Form container" />
-				
-				<x-element::form.input-container />
-				
+								
 				<x-element::form.input title="Input text (default)" />
 				
-				<x-element::form.input type="password" title="Input password" />
-				
-				<x-element::form.textarea title="Textarea" />
+				<x-element::form.textarea title="Textarea" placeholder="Lorem	" />
 				
 				<x-element::form.select title="Select">
 					<option value="">Option 1</option>
