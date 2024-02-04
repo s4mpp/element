@@ -6,17 +6,13 @@ use Illuminate\View\Component;
 
 class Card extends Component
 {
-    public $title = null;
-
     /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct(string $title = null, public bool $padding = true, public string $className = '')
-    {
-        $this->title = $title;
-    }
+    public function __construct(public ?string $title = null, public bool $padding = true, public bool $border = false, public string $className = '')
+    {}
 
     /**
      * Get the view / contents that represent the component.
@@ -25,6 +21,6 @@ class Card extends Component
      */
     public function render()
     {
-        return view('element::card');
+        return view('element::components.card');
     }
 }

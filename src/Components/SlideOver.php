@@ -11,7 +11,7 @@ class SlideOver extends Component
     /**
      * Create a new component instance.
      */
-    public function __construct(public string $id = '', public ?string $title = null)
+    public function __construct(public string $idSlide, public ?string $title = null)
     {}
 
     /**
@@ -19,6 +19,6 @@ class SlideOver extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('element::slide-over');
+        return view('element::components.slide-over');
     }
 }

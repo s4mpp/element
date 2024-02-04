@@ -8,12 +8,10 @@ use Illuminate\Contracts\View\View;
 
 class Button extends Component
 {
-    public $element = 'button';
-
     /**
      * Create a new component instance.
      */
-    public function __construct(public bool $full = false, public string $className = '', public bool $disabled = false, public bool $loading = true)
+    public function __construct(public bool $full = false, public string $className = '', public ?string $size = null, public bool $loading = false)
     {}
 
     /**
@@ -21,6 +19,6 @@ class Button extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('element::button', ['attr_disabled' => $this->disabled]);
+        return view('element::components.button');
     }
 }

@@ -8,23 +8,26 @@ use Illuminate\Contracts\View\View;
 
 class Alert extends Component
 {
-    public $flash_message;
-
- 
-    /**
+     /**
      * Create a new component instance.
      */
-    public function __construct()
-    {
-        $this->flash_message = session('message');
-
-    }
+    public function __construct(
+        public ?string $type = null,
+        public ?string $title = null
+    )
+    {}
 
     /**
      * Get the view / contents that represent the component.
      */
     public function render(): View|Closure|string
     {
-        return view('element::alert');
+        return view('element::components.alert', [
+            'is_default' => (!in_array($this->type, ['success', 'warning', 'danger', 'info'])),
+            'is_success' => ($this->type == 'success'),
+            'is_danger' => ($this->type == 'danger'),
+            'is_warning' => ($this->type == 'warning'),
+            'is_info' => ($this->type == 'info'),
+        ]);
     }
 }

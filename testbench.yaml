@@ -1,0 +1,21 @@
+providers:
+  - S4mpp\Element\Providers\ElementServiceProvider
+
+migrations:
+  - workbench/database/migrations
+
+seeders:
+  - Workbench\Database\Seeders\DatabaseSeeder
+
+workbench:
+  start: '/'
+  install: true
+  discovers:
+    web: true
+    api: false
+    commands: false
+    components: true
+    views: true
+  build: []
+  assets: []
+  sync: []
