@@ -8,7 +8,7 @@ use Illuminate\Support\ServiceProvider;
 
 class ElementServiceProvider extends ServiceProvider 
 {
-	public function boot()
+	public function boot(): void
 	{		
 		Blade::componentNamespace('S4mpp\\Element\\Components', 'element');
 		

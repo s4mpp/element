@@ -25,7 +25,8 @@
     },
     "require-dev": {
         "orchestra/testbench": "^8.21",
-        "nunomaduro/collision": "^7.8"
+        "nunomaduro/collision": "^7.8",
+        "larastan/larastan": "^2.0"
     },
     "autoload-dev": {
         "psr-4": {
@@ -36,9 +37,6 @@
         }
     },
     "scripts": {
-        "post-update-cmd": [
-            "@php artisan vendor:publish --tag=element-assets --ansi --force"
-        ],
         "clear": "@php vendor/bin/testbench package:purge-skeleton --ansi",
         "prepare": "@php vendor/bin/testbench package:discover --ansi",
         "build": "@php vendor/bin/testbench workbench:build --ansi",

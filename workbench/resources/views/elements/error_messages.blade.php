@@ -11,6 +11,7 @@
 			<x-element::message.error />
 			<x-element::message.error key="exception-message" />
 			<x-element::message.error title="Any errors:"  />
+			<x-element::message.error title="All errors:" all  />
 		</div>
 	</div>
 @endsection

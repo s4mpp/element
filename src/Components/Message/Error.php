@@ -4,10 +4,18 @@ namespace S4mpp\Element\Components\Message;
 
 use Closure;
 use Illuminate\View\Component;
+use Illuminate\Support\MessageBag;
 use Illuminate\Contracts\View\View;
+use Illuminate\Support\ViewErrorBag;
+use Illuminate\Support\Facades\Session;
+use Illuminate\Contracts\Support\MessageBag as ContractMessageBag;
 
 class Error extends Component
 {
+    /**
+     *
+     * @var array<string>
+     */
     private array $messages = [];
 
     /**
@@ -15,30 +23,53 @@ class Error extends Component
      */
     public function __construct(public ?string $title = null, public string $key = 'default', public bool $all = false)
     {
-        $this->messages = ($all) ? $this->getAllErrors() : $this->getErrorsBag(session()->get('errors')?->{$key});
+        if($all)
+        {
+            $this->messages = $this->getAllErrorsBags();
+        }
+        else
+        {
+            /** @var ViewErrorBag|null */
+            $errors = Session::get('errors');
+
+            $error_bag = $errors?->getBag($this->key);
+
+            $this->messages = $this->getErrorsFromBag($error_bag);
+        }
     }
 
     /**
      * Get the view / contents that represent the component.
      */
-    public function render(): View|Closure|string
+    public function render(): \Illuminate\Contracts\View\View|\Illuminate\Contracts\View\Factory
     {
         return view('element::components.message.error', ['messages' => $this->messages]);
     }
 
-    private function getAllErrors()
+    /**
+     *
+     * @return array<string>
+     */
+    private function getAllErrorsBags(): array
     {
-        $errors = [];
+        /** @var ViewErrorBag|null */
+        $errors_on_session = Session::get('errors');
 
-        foreach(session()->get('errors')?->getBags() ?? [] as $bag)
+        $errors = [];
+        
+        foreach($errors_on_session?->getBags() ?? [] as $bag)
         {
-            $errors = array_merge($errors, $this->getErrorsBag($bag));
+            $errors = array_merge($errors, $this->getErrorsFromBag($bag));
         }
 
-        return $errors ?? [];
+        return $errors;
     }
 
-    private function getErrorsBag($bag)
+    /**
+     *
+     * @return array<string>
+     */
+    private function getErrorsFromBag(MessageBag | ContractMessageBag $bag = null): array
     {
         foreach($bag?->all() ?? [] as $error)
         {

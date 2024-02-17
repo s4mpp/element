@@ -5,6 +5,7 @@ namespace S4mpp\Element\Components\Message;
 use Closure;
 use Illuminate\View\Component;
 use Illuminate\Contracts\View\View;
+use Illuminate\Support\Facades\Session;
 
 class Flash extends Component
 {
@@ -17,7 +18,14 @@ class Flash extends Component
      */
     public function __construct(public string $key = 'message', public string $type = 'success')
     {
-        $this->message = session($this->key);
+        $value = Session::get($this->key);
+
+        if(!is_string($value) && !is_null($value))
+        {
+            return;
+        }
+
+        $this->message = $value;
 
         if(in_array($this->type, ['success', 'danger', 'info', 'warning']))
         {
@@ -28,7 +36,7 @@ class Flash extends Component
     /**
      * Get the view / contents that represent the component.
      */
-    public function render(): View|Closure|string
+    public function render(): \Illuminate\Contracts\View\View|\Illuminate\Contracts\View\Factory
     {
         return view('element::components.message.flash', [
             'message' => $this->message,
