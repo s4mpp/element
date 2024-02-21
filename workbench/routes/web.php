@@ -22,11 +22,12 @@ Route::view('/cards', 'elements.cards')->name('cards');
 Route::view('/icons', 'elements.icons')->name('icons');
 Route::view('/modals', 'elements.modals')->name('modals');
 Route::view('/slide-overs', 'elements.slide-overs')->name('slide-overs');
-
 Route::view('/inputs', 'elements.inputs')->name('inputs');
+Route::view('/inputs', 'elements.inputs')->name('inputs');
+Route::view('/tables', 'elements.tables')->name('tables');
+
 
 Route::view('/alerts', 'elements.alerts')->name('alerts');
-
 Route::prefix('/flash-messages')->group(function()
 {
     Route::view('/', 'elements.flash_messages')->name('flash_messages');

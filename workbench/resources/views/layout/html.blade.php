@@ -6,7 +6,9 @@
 		<meta http-equiv="X-UA-Compatible" content="ie=edge">
 		<title>Element 2 | @yield('title') @yield('subtitle')</title>
 
+		<script src="https://cdn.tailwindcss.com"></script>
 		<link rel="stylesheet" href="{{ asset('vendor/element/style.css') }}">
+
 		
 	</head>
 	<body class="h-full">

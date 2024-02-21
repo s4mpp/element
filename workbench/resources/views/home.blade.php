@@ -12,6 +12,7 @@
 		'modals' => 'Modals',
 		'slide-overs' => 'Slide overs',
 		'inputs' => 'Inputs',
+		'tables' => 'Tables',
 		'alerts' => 'Alerts',
 		'flash_messages' => 'Flash messages',
 		'error_messages' => 'Error messages',
