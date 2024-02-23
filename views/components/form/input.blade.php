@@ -1,3 +1,8 @@
+@php
+	$old = old($attributes['name']);
+
+	$value = !empty($old) ? $old : null;
+@endphp
 <x-element::form.container title="{{ $title ?? null }}">
 	<x-element::form.input-container>
 		<input {{ $attributes }} class="form-input

@@ -35,11 +35,12 @@ Route::prefix('/flash-messages')->group(function()
     Route::get('/dispatch', function()
     {
         return back()
-            ->with('message', 'Message with key "message" (default)')
-            ->with('info', 'Message with key "info"')
-            ->with('warning-message', 'Message with key "warning-message" with context warning')
-            ->with('error-message', 'Message with key "error-message" with context danger')
-            ->with('info-message', 'Message with key "info-message" with context info');
+            ->with('message', 'Message with key message')
+            ->with('success-message', 'Success message')
+            ->with('info', 'Message with key info')
+            ->with('warning-message', 'Message with key warning')
+            ->with('error-message', 'Message with key error')
+            ->with('info-message', 'Message with key info');
 
     })->name('dispatch_flash_message');
 });
@@ -50,8 +51,9 @@ Route::prefix('/error-messages')->group(function()
     
     Route::get('/dispatch', function()
     {
-        return back()->withErrors('An error has occurred (key default)')
-        ->withErrors('An exception has occurred (key exception-message)', 'exception-message');
+        return back()->withErrors('An error has occurred on default key')
+        ->withErrors('An exception has occurred on exception key', 'exception-message')
+        ->withErrors(['Error in error key', 'other error in error key'], 'error');
 
     })->name('dispatch_error_message');
 });

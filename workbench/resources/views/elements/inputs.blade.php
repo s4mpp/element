@@ -39,7 +39,7 @@
 					<x-element::form.checkbox.item>Option 2</x-element::form.checkbox.item>
 					<x-element::form.checkbox.item>Option 3</x-element::form.checkbox.item>
 					<x-element::form.checkbox.item>Option 4</x-element::form.checkbox.item>
-				</x-element::components.form.checkbox> 
+				</x-element::components.form.checkbox>
 			</div>
 		</div>
 	</div>

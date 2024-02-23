@@ -11,10 +11,7 @@ class Input extends Component
     /**
      * Create a new component instance.
      */
-    public function __construct(
-        public ?string $title = null,
-        public ?string $name = null,
-        public ?string $type = 'text')
+    public function __construct(public ?string $title = null)
     {}
 
     /**
@@ -22,6 +19,6 @@ class Input extends Component
      */
     public function render(): \Illuminate\Contracts\View\View|\Illuminate\Contracts\View\Factory
     {
-        return view('element::components.form.input',  ['type' => $this->type]);
+        return view('element::components.form.input');
     }
 }

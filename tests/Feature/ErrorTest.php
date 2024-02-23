@@ -12,8 +12,8 @@ class ErrorTest extends TestCase
 	{
 		$view_error_bag = new ViewErrorBag();
 
-		$view_error_bag->put('default', new MessageBag(['An error has occurred (key default)']));
-		$view_error_bag->put('exception-message', new MessageBag(['An exception has occurred (key exception-message)']));
+		$view_error_bag->put('default', new MessageBag(['An error has occurred default']));
+		$view_error_bag->put('exception-message', new MessageBag(['An exception has occurred exception']));
 
 		$response = $this->withSession([
 			'errors' => $view_error_bag
@@ -22,13 +22,12 @@ class ErrorTest extends TestCase
 		$response->assertOk();
 
 		$response->assertSeeInOrder([
-			'An error has occurred (key default)',
-			'An exception has occurred (key exception-message)',
-			'Any errors:',
-			'An error has occurred (key default)',
+			'An error has occurred default (default)',
+			'Example title',
+			'An error has occurred default (default)',
 			'All errors:',
-			'An error has occurred (key default)',
-			'An exception has occurred (key exception-message)',
+			'An error has occurred default (default)',
+			'An exception has occurred exception (exception-message)',
 		]);
 	}
 }

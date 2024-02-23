@@ -6,6 +6,7 @@ use Closure;
 use Illuminate\View\Component;
 use Illuminate\Support\MessageBag;
 use Illuminate\Contracts\View\View;
+use Illuminate\Support\Facades\App;
 use Illuminate\Support\ViewErrorBag;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Contracts\Support\MessageBag as ContractMessageBag;
@@ -21,21 +22,23 @@ class Error extends Component
     /**
      * Create a new component instance.
      */
-    public function __construct(public ?string $title = null, public string $key = 'default', public bool $all = false)
+    public function __construct(public ?string $title = null, public ?string $key = null, public bool $all = false)
     {
         if($all)
         {
             $this->messages = $this->getAllErrorsBags();
-        }
-        else
-        {
-            /** @var ViewErrorBag|null */
-            $errors = Session::get('errors');
 
-            $error_bag = $errors?->getBag($this->key);
-
-            $this->messages = $this->getErrorsFromBag($error_bag);
+            return;
         }
+
+        $this->key = ($this->key) ?? 'default';
+        
+        /** @var ViewErrorBag|null */
+        $errors = Session::get('errors'); 
+
+        $error_bag = $errors?->getBag($this->key);
+
+        $this->messages = $this->getErrorsFromBag($this->key, $error_bag);
     }
 
     /**
@@ -43,7 +46,7 @@ class Error extends Component
      */
     public function render(): \Illuminate\Contracts\View\View|\Illuminate\Contracts\View\Factory
     {
-        return view('element::components.message.error', ['messages' => $this->messages]);
+        return view('element::components.message', ['messages' => $this->messages, 'type' => 'danger', 'title' => $this->title]);
     }
 
     /**
@@ -53,13 +56,13 @@ class Error extends Component
     private function getAllErrorsBags(): array
     {
         /** @var ViewErrorBag|null */
-        $errors_on_session = Session::get('errors');
+        $errors_on_session = Session::get('errors'); 
 
         $errors = [];
         
-        foreach($errors_on_session?->getBags() ?? [] as $bag)
+        foreach($errors_on_session?->getBags() ?? [] as $key => $bag)
         {
-            $errors = array_merge($errors, $this->getErrorsFromBag($bag));
+            $errors = array_merge($errors, $this->getErrorsFromBag($key, $bag));
         }
 
         return $errors;
@@ -67,13 +70,13 @@ class Error extends Component
 
     /**
      *
-     * @return array<string>
+     * @return array<int|string|mixed>
      */
-    private function getErrorsFromBag(MessageBag | ContractMessageBag $bag = null): array
+    private function getErrorsFromBag(string $key, MessageBag | ContractMessageBag $bag = null): array
     {
         foreach($bag?->all() ?? [] as $error)
         {
-            $errors[] = $error;
+            $errors[$key][] = $error;
         }
 
         return $errors ?? [];

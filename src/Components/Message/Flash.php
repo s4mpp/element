@@ -9,28 +9,36 @@ use Illuminate\Support\Facades\Session;
 
 class Flash extends Component
 {
-    private ?string $message = null;
+    private array $messages = [];
 
-    private string $alert_type = 'success';
     
      /**
      * Create a new component instance.
      */
-    public function __construct(public string $key = 'message', public string $type = 'success')
+    public function __construct(public string $type = 'info', public ?string $key = null, public bool $all = false)
     {
-        $value = Session::get($this->key);
+        if(!in_array($this->type, ['success', 'danger', 'info', 'warning']))
+        {
+            $this->type = 'info';
+        }
 
-        if(!is_string($value) && !is_null($value))
+        if($all)
+        {
+            $this->messages = $this->getAllFlashMessages();
+
+            return;
+        }
+
+        $this->key = ($this->key) ?? 'message';
+
+        $messages = Session::get($this->key);
+
+        if(!$messages)
         {
             return;
         }
 
-        $this->message = $value;
-
-        if(in_array($this->type, ['success', 'danger', 'info', 'warning']))
-        {
-            $this->alert_type = $this->type;
-        }
+        $this->messages[$this->key][] = $messages;
     }
 
     /**
@@ -38,9 +46,20 @@ class Flash extends Component
      */
     public function render(): \Illuminate\Contracts\View\View|\Illuminate\Contracts\View\Factory
     {
-        return view('element::components.message.flash', [
-            'message' => $this->message,
-            'alert_type' => $this->alert_type
+        return view('element::components.message', [
+            'messages' => $this->messages,
         ]);
+    }
+
+    private function getAllFlashMessages(): array
+    {
+        $flash_keys = Session::get('_flash.old');
+
+        foreach($flash_keys ?? [] as $key)
+        {
+            $messages[$key][] = Session::get($key);
+        }
+
+        return $messages ?? [];
     }
 }

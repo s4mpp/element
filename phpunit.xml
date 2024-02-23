@@ -21,12 +21,11 @@ failOnWarning="true"
       <directory suffix=".php">src</directory>
     </include>
   </source>
-  <coverage disableCodeCoverageIgnore="false">
-    <report >
-      <html 
-        outputDirectory="coverage-html" 
-        lowUpperBound="25" 
-        highLowerBound="50" />
+  <coverage disableCodeCoverageIgnore="false" >
+    <report>
+      <html outputDirectory="coverage-html"
+        lowUpperBound="30" 
+        highLowerBound="60" />
     </report>
   </coverage>
   <php>
