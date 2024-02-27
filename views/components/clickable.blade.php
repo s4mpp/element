@@ -1,17 +1,14 @@
-<button {{ $attributes }}
-	@class(array_merge([$className], [
-		'element--button',
-		'w-full' => $full,
-		'px-2 py-1 text-xs' => ($size == 'mini'),
-		'px-3 py-2 text-sm' => (!$size),
-		'px-4 py-3 text-sm' => ($size == 'large'),
-		'enabled:hover:bg-gray-300',
-		'disabled:opacity-75 disabled:hover:cursor-not-allowed',
-  		'bg-gray-200 text-gray-800 ease-linear transition disabled:cursor-not-allowed inline-flex  rounded-md font-semibold',
-	]))
-	
-	:class="(typeof loading != 'undefined' ? loading : false) ? 'opacity-75 cursor-not-allowed' : ''"
-	x-bind:disabled="(typeof loading != 'undefined' ? loading : false)">
+<{{ $element }} {{ $attributes->class([
+	'element--button',
+	'cursor-pointer',
+	'w-full' => $full,
+	'px-2 py-1 text-xs' => ($size == 'mini'),
+	'px-3 py-2 text-sm' => (!$size),
+	'px-4 py-3 text-sm' => ($size == 'large'),
+	'hover:bg-gray-300',
+	  'bg-gray-200 text-gray-800 ease-linear transition  inline-flex  rounded-md font-semibold',
+	]) }}
+	:class="(typeof loading != 'undefined' ? loading : false) ? 'opacity-75 pointer-events-none' : ''">
 
 	<div class="flex items-center justify-center gap-3 w-full">
 		@if($loading)
@@ -33,5 +30,4 @@
 			{{ $slot }}
 		</div>
 	</div>
-
-</button>
+</{{ $element }}>

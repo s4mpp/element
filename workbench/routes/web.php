@@ -17,7 +17,7 @@ use Illuminate\Support\Facades\Route;
  
 
 Route::view('/badges', 'elements.badges')->name('badges');
-Route::view('/buttons', 'elements.buttons')->name('buttons');
+Route::view('/buttons-and-links', 'elements.buttons-and-links')->name('buttons-and-links');
 Route::view('/cards', 'elements.cards')->name('cards');
 Route::view('/icons', 'elements.icons')->name('icons');
 Route::view('/modals', 'elements.modals')->name('modals');

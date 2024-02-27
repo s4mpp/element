@@ -16,4 +16,9 @@ class BadgeTest extends TestCase
 		$badge->assertSee('element--badge-content');
 		$badge->assertDontSee('element--badge-loading');
 	}
+
+	// no color
+	// with color
+	// with label
+	// with loading
 }

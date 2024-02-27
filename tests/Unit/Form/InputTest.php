@@ -15,4 +15,7 @@ class InputTest extends TestCase
 		$alert->assertSee('element--input-container');
 		$alert->assertDontSee('element--input-label');
 	}
+
+	// various input types
+	// required / not required
 }

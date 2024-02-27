@@ -16,7 +16,7 @@ class ErrorMessageTest extends TestCase
 		);
 
 		$alert->assertDontSee('element--alert');
-		$this->assertEquals('', (string)$alert);
+		$this->assertEquals('', $alert);
 	}
 
 	function test_render_component_with_error_default()

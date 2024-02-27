@@ -4,7 +4,7 @@ namespace S4mpp\Element\Components;
 
 use Illuminate\View\Component;
 
-class Badge extends Component
+final class Badge extends Component
 {
     /**
      * Create a new component instance.
@@ -14,11 +14,11 @@ class Badge extends Component
     public function __construct(
         public ?string $color = null,
         public ?string $loadingText = null)
-    {}
+    {
+    }
 
     /**
      * Get the view / contents that represent the component.
-     *
      */
     public function render(): \Illuminate\Contracts\View\View|\Illuminate\Contracts\View\Factory
     {

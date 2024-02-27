@@ -1,4 +1,8 @@
-<x-element::form.container title="{{ $title ?? null }}">
+@php
+	$attributes['id'] = $attributes->get('id', 'input'.rand());
+@endphp
+
+<x-element::form.container title="{{ $title ?? null }}" required="{{ $attributes->get('required') }}" idInput="{{ $attributes->get('id') }}">
 	<x-element::form.input-container>
 		<select 
 		{{ $attributes->merge(($multiple) ? ['multiple' => true] : [])

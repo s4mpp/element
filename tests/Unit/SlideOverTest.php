@@ -19,4 +19,8 @@ class SlideOverTest extends TestCase
 		$slide_over->assertSee('element--slide-over-content');
 		$slide_over->assertDontSee('element--slide-over-title');
 	}
+
+	// without title
+	// with title
+	// with modal
 }

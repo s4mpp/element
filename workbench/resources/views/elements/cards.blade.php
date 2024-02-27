@@ -10,6 +10,15 @@
 		</div>
 	</div>
 
+	<div>
+		<h2 class="font-semibold mb-1">Styled</h2>
+		<div class="space-y-4">
+			<x-element::card class="bg-red-100 border-red-400" title="Card title">
+				content
+			</x-element::card>
+		</div>
+	</div>
+
 
 	<div>
 		<h2 class="font-semibold mb-1">No padding</h2>
@@ -29,7 +38,7 @@
 		<h2 class="font-semibold mb-1">Slot header</h2>
 		<div class="space-y-4">
 			<x-element::card :padding=false title="Title">
-				<x-slot:header className="bg-red-100">
+				<x-slot:header class="bg-red-100">
 					Slot Header
 				</x-slot:header>
 

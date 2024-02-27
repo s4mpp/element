@@ -46,6 +46,19 @@
 			</div>
 
 			<div>
+				<h2 class="font-semibold mb-1">No lines</h2>
+				
+				<x-element::table>
+					<x-slot:header>
+						@for($i = 1; $i <= 3; $i++)
+							<x-element::table.th>Title {{ $i }}</x-element::table.th>
+						@endfor
+						
+					</x-slot:header>
+				</x-element::table>
+			</div>
+
+			<div>
 				<h2 class="font-semibold mb-1">No Content</h2>
 				
 				<x-element::table></x-element::table>

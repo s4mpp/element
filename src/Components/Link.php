@@ -4,21 +4,17 @@ namespace S4mpp\Element\Components;
 
 use Illuminate\View\Component;
 use Illuminate\Contracts\View\View;
+use S4mpp\Element\Traits\IsClickable;
 
-final class SlideOver extends Component
+final class Link extends Component
 {
-    /**
-     * Create a new component instance.
-     */
-    public function __construct(public string $idSlide, public ?string $title = null)
-    {
-    }
+    use IsClickable;
 
     /**
      * Get the view / contents that represent the component.
      */
     public function render(): View|\Illuminate\Contracts\View\Factory
     {
-        return view('element::components.slide-over');
+        return view('element::components.clickable', ['element' => 'a']);
     }
 }

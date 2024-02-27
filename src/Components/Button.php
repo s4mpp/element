@@ -2,23 +2,19 @@
 
 namespace S4mpp\Element\Components;
 
-use Closure;
 use Illuminate\View\Component;
 use Illuminate\Contracts\View\View;
+use S4mpp\Element\Traits\IsClickable;
 
-class Button extends Component
+final class Button extends Component
 {
-    /**
-     * Create a new component instance.
-     */
-    public function __construct(public bool $full = false, public string $className = '', public ?string $size = null, public bool $loading = false)
-    {}
+    use IsClickable;
 
     /**
      * Get the view / contents that represent the component.
      */
-    public function render(): \Illuminate\Contracts\View\View|\Illuminate\Contracts\View\Factory
+    public function render(): View|\Illuminate\Contracts\View\Factory
     {
-        return view('element::components.button');
+        return view('element::components.clickable', ['element' => 'button']);
     }
 }

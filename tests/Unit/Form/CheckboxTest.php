@@ -15,4 +15,7 @@ class CheckboxTest extends TestCase
 		$alert->assertSee('element--input-container');
 		$alert->assertDontSee('element--input-label');
 	}
+
+	// with elements
+	// required / not required
 }

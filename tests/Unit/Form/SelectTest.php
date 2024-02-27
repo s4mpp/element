@@ -15,4 +15,8 @@ class SelectTest extends TestCase
 		$alert->assertSee('element--input-container');
 		$alert->assertDontSee('element--input-label');
 	}
+
+	// with options
+	// multiple
+	// required / not required
 }

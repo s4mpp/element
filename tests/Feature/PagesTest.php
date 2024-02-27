@@ -11,13 +11,14 @@ class PagesTest extends TestCase
 		return [
 			['/'],
 			['/badges'],
-			['/buttons'],
+			['/buttons-and-links'],
 			['/cards'],
 			['/icons'],
 			['/modals'],
 			['/slide-overs'],
 			['/inputs'],
 			['/alerts'],
+			['/tables'],
 			['/flash-messages'],
 			['/error-messages'],
 		];

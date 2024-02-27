@@ -6,7 +6,7 @@
 
 	@foreach([
 		'badges' => 'Badges',
-		'buttons' => 'Buttons',
+		'buttons-and-links' => 'Buttons and Links',
 		'cards' => 'Cards',
 		'icons' => 'Icons',
 		'modals' => 'Modals',

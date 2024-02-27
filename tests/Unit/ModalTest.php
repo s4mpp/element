@@ -20,4 +20,9 @@ class ModalTest extends TestCase
 		$modal->assertDontSee('element--modal-subtitle');
 		$modal->assertDontSee('element--modal-title');
 	}
+
+	// without title
+	// with title
+	// with title and subtitle
+	// with subtitle without title
 }

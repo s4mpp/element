@@ -15,4 +15,6 @@ class TextareaTest extends TestCase
 		$alert->assertSee('element--input-container');
 		$alert->assertDontSee('element--input-label');
 	}
+
+	// required / not required
 }

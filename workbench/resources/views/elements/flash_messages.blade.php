@@ -16,6 +16,13 @@
 		</div>
 
 		<div>
+			<h2 class="font-semibold mb-1">Inexistent key</h2>
+			<div class="space-y-4 border-dashed border border-gray-700 p-2 rounded-lg">
+				<x-element::message.flash key="invalid-key" />
+			</div>
+		</div>
+
+		<div>
 			<h2 class="font-semibold mb-1">Success</h2>
 			<div class="space-y-4">
 				<x-element::message.flash key="success-message" type="success" />
@@ -37,6 +44,12 @@
 			<h2 class="font-semibold mb-1">Danger</h2>
 			<div class="space-y-4">
 				<x-element::message.flash key="error-message" type="danger" />
+			</div>
+		</div>
+		<div>
+			<h2 class="font-semibold mb-1">Invalid type (turns to info)</h2>
+			<div class="space-y-4">
+				<x-element::message.flash key="error-message" type="xxxxx" />
 			</div>
 		</div>
 

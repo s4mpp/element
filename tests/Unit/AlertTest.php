@@ -17,4 +17,9 @@ class AlertTest extends TestCase
 		$alert->assertSee('element--alert-content');
 		$alert->assertDontSee('element--alert-title');
 	}
+
+	// basic
+	// with title
+	// with html
+	// with long text
 }

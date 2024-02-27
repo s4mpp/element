@@ -16,4 +16,8 @@ class CardTest extends TestCase
 		$card->assertSee('element--card-content');
 		$card->assertDontSee('element--card-title');
 	}
+
+	// no padding
+	// with title
+	// with slot header
 }

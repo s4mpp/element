@@ -2,11 +2,10 @@
 
 namespace S4mpp\Element\Components;
 
-use Closure;
 use Illuminate\View\Component;
 use Illuminate\Contracts\View\View;
 
-class Icon extends Component
+final class Icon extends Component
 {
     public int $size;
 
@@ -17,8 +16,7 @@ class Icon extends Component
      */
     public function __construct(public string $name, public bool $mini = false, bool $solid = false)
     {
-        if($mini)
-        {
+        if ($mini) {
             $solid = true;
         }
 
@@ -30,7 +28,7 @@ class Icon extends Component
     /**
      * Get the view / contents that represent the component.
      */
-    public function render(): \Illuminate\Contracts\View\View|\Illuminate\Contracts\View\Factory
+    public function render(): View|\Illuminate\Contracts\View\Factory
     {
         return view('element::components.icons.'.$this->size.'.'.$this->style.'.'.$this->name);
     }

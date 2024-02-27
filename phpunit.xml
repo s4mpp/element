@@ -24,8 +24,8 @@ failOnWarning="true"
   <coverage disableCodeCoverageIgnore="false" >
     <report>
       <html outputDirectory="coverage-html"
-        lowUpperBound="30" 
-        highLowerBound="60" />
+        lowUpperBound="50" 
+        highLowerBound="100" />
     </report>
   </coverage>
   <php>
