@@ -3,7 +3,7 @@
 		<div class="space-y-1">
 			@foreach($messages as $key => $bag)
 				@foreach($bag as $message)
-					<p>{{ $message }} @env(['staging', 'testing', 'local'])({{ $key }})@endenv</p>
+					<p>{!! $message !!} @env(['staging', 'testing', 'local']) <span class="opacity-50">({{ $key }})</span>@endenv</p>
 				@endforeach
 			@endforeach
 		</div>

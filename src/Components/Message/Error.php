@@ -6,6 +6,7 @@ use Illuminate\View\Component;
 use Illuminate\Support\MessageBag;
 use Illuminate\Contracts\View\View;
 use Illuminate\Support\ViewErrorBag;
+use Illuminate\Validation\Validator;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Contracts\Support\MessageBag as ContractMessageBag;
 
@@ -19,7 +20,7 @@ final class Error extends Component
     /**
      * Create a new component instance.
      */
-    public function __construct(public ?string $title = null, public ?string $key = null, public bool $all = false)
+    public function __construct(public ?string $title = null, public ?string $key = null, public bool $all = false, public $provider = null)
     {
         if ($all) {
             $this->messages = $this->getAllErrorsBags();
@@ -30,7 +31,7 @@ final class Error extends Component
         $this->key ??= 'default';
 
         /** @var ViewErrorBag|null */
-        $errors = Session::get('errors');
+        $errors = $this->getErrors();
 
         $error_bag = $errors?->getBag($this->key);
 
@@ -51,7 +52,7 @@ final class Error extends Component
     private function getAllErrorsBags(): array
     {
         /** @var ViewErrorBag|null */
-        $errors_on_session = Session::get('errors');
+        $errors_on_session = $this->getErrors();
 
         $errors = [];
 
@@ -72,5 +73,10 @@ final class Error extends Component
         }
 
         return $errors ?? [];
+    }
+
+    private function getErrors(): ?ViewErrorBag
+    {
+        return ($this->provider) ? $this->provider : Session::get('errors');
     }
 }
