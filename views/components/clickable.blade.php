@@ -11,6 +11,7 @@
 
 	'bg-gray-100 text-gray-800' => ($style['is_default']),
 	'bg-gray-200 hover:bg-gray-300 text-gray-700' => ($style['is_light']),
+	'bg-gray-400 hover:bg-gray-500 text-white' => ($style['is_secondary']),
 	'bg-gray-600 hover:bg-gray-700 text-white' => ($style['is_dark']),
 	'bg-green-600  hover:bg-green-700 text-white' => ($style['is_success']),
 	'bg-red-600  hover:bg-red-700 text-white' => ($style['is_danger']),

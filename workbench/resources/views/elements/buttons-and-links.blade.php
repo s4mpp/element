@@ -46,6 +46,7 @@
 				<div class="space-y-4">
 					<x-element::button context="default">Default</x-element::button>
 					<x-element::button context="light">Light</x-element::button>
+					<x-element::button context="secondary">Secondary</x-element::button>
 					<x-element::button context="dark">Dark</x-element::button>
 					<x-element::button context="success">Success</x-element::button>
 					<x-element::button context="danger">Danger</x-element::button>

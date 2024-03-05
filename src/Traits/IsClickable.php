@@ -14,8 +14,9 @@ trait IsClickable
     public function getStyle(): array
     {
         return [
-            'is_default' => (! in_array($this->context, ['light', 'dark', 'success', 'warning', 'danger', 'info'])),
+            'is_default' => (! in_array($this->context, ['light', 'secondary', 'dark', 'success', 'warning', 'danger', 'info'])),
             'is_light' => ($this->context == 'light'),
+            'is_secondary' => ($this->context == 'secondary'),
             'is_dark' => ($this->context == 'dark'),
             'is_success' => ($this->context == 'success'),
             'is_danger' => ($this->context == 'danger'),
