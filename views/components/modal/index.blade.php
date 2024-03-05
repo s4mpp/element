@@ -24,7 +24,7 @@
 			x-transition:leave-end="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95" 
 			class="element--modal-dialog relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg">
 			
-			<div class="bg-white px-4 pt-5 sm:p-6 sm:pb-4 mb-4">
+			<div class="bg-white px-4 pt-5 sm:p-6 sm:pb-4 mb-4 border-b">
 				<div class="flex justify-start align-center items-center">
 					
 					@if($danger)
@@ -38,27 +38,27 @@
 					<div class="text-center w-full sm:text-left">
 						@if($title)
 							<div class="flex w-full justify-between items-center">
-								<h3 class="text-base font-semibold text-gray-900 element--modal-title">{{ $title }}</h3>
-							</div>
-						@endif
-
-						@if($subtitle)
-							<div class="mt-0 element--modal-subtitle">
-								<p class="text-sm text-gray-500">{{ $subtitle }}</p>
+								<h3 class="text-base font-semibold text-gray-900 --element--modal-title">{{ $title }}</h3>
 							</div>
 						@endif
 					</div>
-
-					<button x-on:click="{{ $idModal }} = false" type="button" class="element--modal-button-close text-gray-500 p-2 hover:text-gray-700 transition-colors">
+					
+					<button x-on:click="{{ $idModal }} = false" type="button" class="--element--modal-button-close text-gray-500 p-2 hover:text-gray-700 transition-colors">
 						<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
 							<path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
 						</svg>
 					</button>
-				
 				</div>
 			</div>
 
 			<div class="bg-white px-4 pb-6 sm:px-6">
+
+				@if($subtitle)
+					<div class="mt-0 --element--modal-subtitle text-center py-4">
+						<p class="text-base text-gray-700">{{ $subtitle }}</p>
+					</div>
+				@endif
+
 				{{ $slot }}
 			</div>
 		</div>

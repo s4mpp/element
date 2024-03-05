@@ -9,9 +9,9 @@
 
 	<div class="space-y-4 clear-both mt-4">
 		<div>
-			<h2 class="font-semibold mb-1">No key / No type  (key message / type info)</h2>
+			<h2 class="font-semibold mb-1"> (key message / type info)</h2>
 			<div class="space-y-4">
-				<x-element::message.flash />
+				<x-element::message.flash  key="message" />
 			</div>
 		</div>
 
@@ -55,9 +55,9 @@
 
 
 		<div>
-			<h2 class="font-semibold mb-1">All keys</h2>
+			<h2 class="font-semibold mb-1">All keys (default)</h2>
 			<div class="space-y-4">
-				<x-element::message.flash all />
+				<x-element::message.flash />
 			</div>
 		</div>
 	</div>

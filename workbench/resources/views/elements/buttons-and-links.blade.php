@@ -40,6 +40,19 @@
 					<x-element::button size="large" loading x-data="{loading: false}" x-on:click="loading = true">Loading on click</x-element::button>
 				</div>
 			</div>
+
+			<div>
+				<h2 class="font-semibold mb-1">Context</h2>
+				<div class="space-y-4">
+					<x-element::button context="default">Default</x-element::button>
+					<x-element::button context="light">Light</x-element::button>
+					<x-element::button context="dark">Dark</x-element::button>
+					<x-element::button context="success">Success</x-element::button>
+					<x-element::button context="danger">Danger</x-element::button>
+					<x-element::button context="info">Info</x-element::button>
+					<x-element::button context="warning">Warning</x-element::button>
+				</div>
+			</div>
 		
 			<div>
 				<h2 class="font-semibold mb-1">Full</h2>

@@ -19,6 +19,6 @@ final class Modal extends Component
      */
     public function render(): View|\Illuminate\Contracts\View\Factory
     {
-        return view('element::components.modal');
+        return view('element::components.modal.index');
     }
 }

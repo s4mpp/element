@@ -11,11 +11,16 @@
 				<x-element::form.input id="id-def" title="Input text (default)" />
 				<x-element::form.input title="Input required" required />
 				<x-element::form.input title="Input with placeholder" placeholder="Placeholder text" />
+
+				<div class="flex border items-center ">
+					<x-element::form.input placeholder="with button" required />
+					<x-element::button>Button</x-element::button>
+				</div>
 				
 				<x-element::form.input autocomplete="new-password" type="password" title="Password">
-					<x-slot:start>
+					<x-slot:end>
 						<x-element::form.show-password-button/>
-					</x-slot:start>
+					</x-slot:end>
 				</x-element::form.input>
 			</div>
 		</div>

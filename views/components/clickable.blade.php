@@ -5,8 +5,18 @@
 	'px-2 py-1 text-xs' => ($size == 'mini'),
 	'px-3 py-2 text-sm' => (!$size),
 	'px-4 py-3 text-sm' => ($size == 'large'),
-	'hover:bg-gray-300',
-	  'bg-gray-200 text-gray-800 ease-linear transition  inline-flex  rounded-md font-semibold',
+	'border-none',
+	'ease-linear transition  inline-flex  rounded-md font-semibold',
+	'focus-visible:outline focus-visible:outline-2 focus-visible:outline-indigo-600',
+
+	'bg-gray-100 text-gray-800' => ($style['is_default']),
+	'bg-gray-200 hover:bg-gray-300 text-gray-700' => ($style['is_light']),
+	'bg-gray-600 hover:bg-gray-700 text-white' => ($style['is_dark']),
+	'bg-green-600  hover:bg-green-700 text-white' => ($style['is_success']),
+	'bg-red-600  hover:bg-red-700 text-white' => ($style['is_danger']),
+	'bg-orange-600 hover:bg-orange-700 text-white' => ($style['is_warning']),
+	'bg-blue-600 hover:bg-blue-700 text-white' => ($style['is_info']),
+
 	]) }}
 	:class="(typeof loading != 'undefined' ? loading : false) ? 'opacity-75 pointer-events-none' : ''">
 
@@ -26,7 +36,7 @@
 			</div>
 		@endif
 	
-		<div class="element--button-content">
+		<div class="element--button-content inline-flex gap-2">
 			{{ $slot }}
 		</div>
 	</div>

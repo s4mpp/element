@@ -15,6 +15,6 @@ final class Button extends Component
      */
     public function render(): View|\Illuminate\Contracts\View\Factory
     {
-        return view('element::components.clickable', ['element' => 'button']);
+        return view('element::components.clickable', ['element' => 'button', 'style' => $this->getStyle()]);
     }
 }

@@ -1,6 +1,6 @@
-<div {{ $attributes->class(['element--card', 'overflow-hidden', 'sm:rounded-lg', 'border', 'border-collapse']) }} >
+<div {{ $attributes->class(['--element--card', 'overflow-hidden', 'sm:rounded-lg', 'border', 'border-collapse']) }} >
     @if($title)
-        <div class="element--card-title border-b border-gray-200 px-4 py-5 sm:px-6 flex flex-start items-center gap-4">
+        <div class="--element--card-title border-b border-gray-200 px-4 py-5 sm:px-6 flex flex-start items-center gap-4">
             <h3 class="text-base font-semibold leading-6 text-gray-900">{{ $title }}</h3>
 
             @isset($header)

@@ -1,8 +1,8 @@
-<div x-data="{showPassword: false, change(button)
+<div class=" flex flex-row justify-center" x-data="{showPassword: false, change(button)
 	{
 		button.closest('.--element-input-container').querySelector('input').type = (this.showPassword) ? 'text' : 'password';
 	}}">
-	<button class="my-0  ml-1 px-2 py-1" type="button" x-on:click="showPassword = !showPassword, change($event.target)" tabindex="-1">
+	<button class="my-0 py-1 px-2" type="button" x-on:click="showPassword = !showPassword, change($event.target)" tabindex="-1">
 		<div x-show="!showPassword">
 			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5">
 				<path d="M12 15a3 3 0 100-6 3 3 0 000 6z" />

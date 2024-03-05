@@ -20,15 +20,14 @@ final class Error extends Component
     /**
      * Create a new component instance.
      */
-    public function __construct(public ?string $title = null, public ?string $key = null, public bool $all = false, public $provider = null)
+    public function __construct(public ?string $title = null, public ?string $key = null, public $provider = null)
     {
-        if ($all) {
+        
+        if (!$this->key) {
             $this->messages = $this->getAllErrorsBags();
 
             return;
         }
-
-        $this->key ??= 'default';
 
         /** @var ViewErrorBag|null */
         $errors = $this->getErrors();

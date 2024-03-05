@@ -9,9 +9,9 @@
 
 		<div class="space-y-4 clear-both mt-4">
 			<div>
-				<h2 class="font-semibold mb-1">No key (key default)</h2>
+				<h2 class="font-semibold mb-1">key default</h2>
 				<div class="space-y-4">
-					<x-element::message.error />
+					<x-element::message.error key="default" />
 				</div>
 			</div>
 
@@ -30,9 +30,9 @@
 			</div>
 
 			<div>
-				<h2 class="font-semibold mb-1">With all keys (all)</h2>
+				<h2 class="font-semibold mb-1">With all keys (default)</h2>
 				<div class="space-y-4">
-					<x-element::message.error title="All errors:" all  />
+					<x-element::message.error title="All errors:"  />
 				</div>
 			</div>
 		</div>

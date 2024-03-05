@@ -15,6 +15,6 @@ final class Link extends Component
      */
     public function render(): View|\Illuminate\Contracts\View\Factory
     {
-        return view('element::components.clickable', ['element' => 'a']);
+        return view('element::components.clickable', ['element' => 'a', 'style' => $this->getStyle()]);
     }
 }

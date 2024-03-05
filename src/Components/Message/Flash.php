@@ -16,19 +16,17 @@ final class Flash extends Component
     /**
      * Create a new component instance.
      */
-    public function __construct(public string $type = 'info', public ?string $key = null, public bool $all = false)
+    public function __construct(public string $type = 'info', public ?string $key = null)
     {
         if (! in_array($this->type, ['success', 'danger', 'info', 'warning'])) {
             $this->type = 'info';
         }
 
-        if ($all) {
+        if (!$this->key) {
             $this->messages = $this->getAllFlashMessages();
 
             return;
         }
-
-        $this->key ??= 'message';
 
         $messages = Session::get($this->key);
 
