@@ -1,4 +1,4 @@
-<div x-cloak x-show="{{ $idSlide }}" class="element--slide-over-backdrop absolute z-50" aria-labelledby="slide-over-title" role="dialog" aria-modal="true" >
+<div x-cloak x-show="{{ $idSlide }}" class="--element-slide-over-backdrop absolute z-50" aria-labelledby="slide-over-title" role="dialog" aria-modal="true" >
 
 	<div
 	x-show="{{ $idSlide }}"
@@ -33,7 +33,7 @@
 				x-transition:leave-start="opacity-100"
 				x-transition:leave-end="opacity-0"
 			 class="absolute left-0 top-0 -ml-8 flex pr-2 pt-4 sm:-ml-10 sm:pr-4">
-			  <button x-on:click="{{ $idSlide }} = false" type="button" class="element--slide-over-button-close relative rounded-md text-gray-300 hover:text-white focus:outline-none focus:ring-2 focus:ring-white">
+			  <button x-on:click="{{ $idSlide }} = false" type="button" class="--element-slide-over-button-close relative rounded-md text-gray-300 hover:text-white focus:outline-none focus:ring-2 focus:ring-white">
 				<span class="absolute -inset-2.5"></span>
 				<span class="sr-only">Close panel</span>
 				<svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
@@ -42,13 +42,13 @@
 			  </button>
 			</div>
   
-			<div class="flex h-full flex-col overflow-y-scroll bg-white py-6 shadow-xl element--slide-over-dialog">
+			<div class="flex h-full flex-col overflow-y-scroll bg-white py-6 shadow-xl --element-slide-over-dialog">
 				@isset($title)
 					<div class="px-4 sm:px-6">
-						<h2 class="text-base font-semibold leading-6 text-gray-900" id="slide-over-title">{{ $title }}</h2>
+						<h2 class="text-base font-semibold leading-6 text-gray-900" class="--element-slide-over-title">{{ $title }}</h2>
 					</div>
 				@endisset
-			  <div class="relative mt-6 flex-1 px-4 sm:px-6 element--slide-over-content">
+			  <div class="relative mt-6 flex-1 px-4 sm:px-6 --element-slide-over-content">
 				{{ $slot }}
 			  </div>
 			</div>

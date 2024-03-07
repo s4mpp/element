@@ -12,8 +12,8 @@ class InputTest extends TestCase
 			'<x-element::form.input />'
 		);
 
-		$alert->assertSee('element--input-container');
-		$alert->assertDontSee('element--input-label');
+		$alert->assertSee('--element-input-container');
+		$alert->assertDontSee('--element-input-label');
 	}
 
 	// various input types

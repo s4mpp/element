@@ -6,6 +6,9 @@ use Illuminate\View\Component;
 use Illuminate\Contracts\View\View;
 use Illuminate\Support\Facades\Session;
 
+/**
+ * @codeCoverageIgnore
+ */
 final class Flash extends Component
 {
     /**

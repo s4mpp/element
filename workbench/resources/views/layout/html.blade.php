@@ -8,8 +8,6 @@
 
 		<script src="https://cdn.tailwindcss.com"></script>
 		<link rel="stylesheet" href="{{ asset('vendor/element/style.css') }}">
-
-		
 	</head>
 	<body class="h-full">
 		<div class="container mx-auto my-4">

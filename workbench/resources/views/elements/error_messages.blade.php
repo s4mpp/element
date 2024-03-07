@@ -35,6 +35,13 @@
 					<x-element::message.error title="All errors:"  />
 				</div>
 			</div>
+
+			<div>
+				<h2 class="font-semibold mb-1">With provider</h2>
+				<div class="space-y-4">
+					<x-element::message.error title="All errors:" :provider=$errors  />
+				</div>
+			</div>
 		</div>
 	</div>
 @endsection

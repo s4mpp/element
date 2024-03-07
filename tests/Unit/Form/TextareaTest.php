@@ -12,8 +12,8 @@ class TextareaTest extends TestCase
 			'<x-element::form.textarea />'
 		);
 
-		$alert->assertSee('element--input-container');
-		$alert->assertDontSee('element--input-label');
+		$alert->assertSee('--element-input-container');
+		$alert->assertDontSee('--element--nput-label');
 	}
 
 	// required / not required

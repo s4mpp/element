@@ -8,14 +8,11 @@ class FlashMessageTest extends TestCase
 {
 	function test_render_component()
 	{
-		
 		$alert = $this->blade(
-			'<x-element::message.flash />'
+			'<x-element::message.flash  />'
 		);
 
-		$alert->assertDontSee('element--alert');
+		$alert->assertDontSee('--element-alert');
 		$this->assertEquals('', $alert);
 	}
-
-
 }

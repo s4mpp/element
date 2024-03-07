@@ -1,29 +1,27 @@
 <{{ $element }} {{ $attributes->class([
-	'element--button',
-	'cursor-pointer',
+	'--element-button',
 	'w-full' => $full,
+	'cursor-pointer',
 	'px-2 py-1 text-xs' => ($size == 'mini'),
 	'px-3 py-2 text-sm' => (!$size),
 	'px-4 py-3 text-sm' => ($size == 'large'),
-	'border-none',
-	'ease-linear transition  inline-flex  rounded-md font-semibold',
-	'focus-visible:outline focus-visible:outline-2 focus-visible:outline-indigo-600',
+	'ring-1 ring-inset',
+	'transition-colors duration-200 ease-in inline-flex  rounded-md font-semibold',
+	'focus:outline focus:outline-2 outline-offset-1 disabled:opacity-75 disabled:pointer-events-none',
 
-	'bg-gray-100 text-gray-800' => ($style['is_default']),
-	'bg-gray-200 hover:bg-gray-300 text-gray-700' => ($style['is_light']),
-	'bg-gray-400 hover:bg-gray-500 text-white' => ($style['is_secondary']),
-	'bg-gray-600 hover:bg-gray-700 text-white' => ($style['is_dark']),
-	'bg-green-600  hover:bg-green-700 text-white' => ($style['is_success']),
-	'bg-red-600  hover:bg-red-700 text-white' => ($style['is_danger']),
-	'bg-orange-600 hover:bg-orange-700 text-white' => ($style['is_warning']),
-	'bg-blue-600 hover:bg-blue-700 text-white' => ($style['is_info']),
+	'--element-button-default bg-white hover:bg-gray-100 ring-gray-300 outline-gray-300  text-gray-800' => ($style['is_default']),
+	'--element-button-secondary bg-gray-400 hover:bg-gray-500 ring-gray-400 outline-gray-400  text-white' => ($style['is_secondary']),
+	'--element-button-success bg-green-600 hover:bg-green-700 ring-green-600 outline-green-600  text-white' => ($style['is_success']),
+	'--element-button-danger bg-red-600  hover:bg-red-700 ring-red-600 outline-red-600  text-white' => ($style['is_danger']),
+	'--element-button-info bg-blue-600 hover:bg-blue-700 ring-blue-600 outline-blue-600  text-white' => ($style['is_info']),
+	'--element-button-warning bg-orange-600 hover:bg-orange-700 ring-orange-600 outline-orange-600  text-white' => ($style['is_warning']),
 
 	]) }}
 	:class="(typeof loading != 'undefined' ? loading : false) ? 'opacity-75 pointer-events-none' : ''">
 
 	<div class="flex items-center justify-center gap-3 w-full">
 		@if($loading)
-			<div x-cloak x-show="(typeof loading != 'undefined' ? loading : false)" class="element--button-loading">
+			<div x-cloak x-show="(typeof loading != 'undefined' ? loading : false)" class="--element-button-loading">
 				<svg  @class([
 					'inline',
 					'animate-spin',
@@ -37,7 +35,7 @@
 			</div>
 		@endif
 	
-		<div class="element--button-content inline-flex gap-2">
+		<div class="--element-button-content inline-flex gap-2">
 			{{ $slot }}
 		</div>
 	</div>

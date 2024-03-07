@@ -15,7 +15,7 @@ class ErrorMessageTest extends TestCase
 			'<x-element::message.error />'
 		);
 
-		$alert->assertDontSee('element--alert');
+		$alert->assertDontSee('--element-alert');
 		$this->assertEquals('', $alert);
 	}
 
@@ -24,10 +24,10 @@ class ErrorMessageTest extends TestCase
 		session()->put('errors', (new ViewErrorBag)->put('default', (new MessageBag())->add('name', 'Example error')));
 		
 		$alert = $this->blade(
-			'<x-element::message.error />'
+			'<x-element::message.error key="default" />'
 		);
 
-		$alert->assertSee('element--alert');
+		$alert->assertSee('--element-alert');
 		$alert->assertSee('Example error');
 	}
 
@@ -36,10 +36,10 @@ class ErrorMessageTest extends TestCase
 		session()->put('errors', (new ViewErrorBag)->put('default', (new MessageBag())->add('name', 'Example error 1')->add('name', 'Example error 2')));
 		
 		$alert = $this->blade(
-			'<x-element::message.error all />'
+			'<x-element::message.error />'
 		);
 
-		$alert->assertSee('element--alert');
+		$alert->assertSee('--element-alert');
 		$alert->assertSee('Example error 1');
 		$alert->assertSee('Example error 2');
 	}

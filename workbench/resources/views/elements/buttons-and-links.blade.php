@@ -45,13 +45,22 @@
 				<h2 class="font-semibold mb-1">Context</h2>
 				<div class="space-y-4">
 					<x-element::button context="default">Default</x-element::button>
-					<x-element::button context="light">Light</x-element::button>
 					<x-element::button context="secondary">Secondary</x-element::button>
-					<x-element::button context="dark">Dark</x-element::button>
 					<x-element::button context="success">Success</x-element::button>
 					<x-element::button context="danger">Danger</x-element::button>
 					<x-element::button context="info">Info</x-element::button>
 					<x-element::button context="warning">Warning</x-element::button>
+				</div>
+			</div>
+			<div>
+				<h2 class="font-semibold mb-1">Disabled</h2>
+				<div class="space-y-4">
+					<x-element::button disabled context="default">Default</x-element::button>
+					<x-element::button disabled context="secondary">Secondary</x-element::button>
+					<x-element::button disabled context="success">Success</x-element::button>
+					<x-element::button disabled context="danger">Danger</x-element::button>
+					<x-element::button disabled context="info">Info</x-element::button>
+					<x-element::button disabled context="warning">Warning</x-element::button>
 				</div>
 			</div>
 		

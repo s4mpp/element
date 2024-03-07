@@ -12,8 +12,8 @@ class RadioTest extends TestCase
 			'<x-element::form.radio />'
 		);
 
-		$alert->assertSee('element--input-container');
-		$alert->assertDontSee('element--input-label');
+		$alert->assertSee('--element-input-container');
+		$alert->assertDontSee('--element-input-label');
 	}
 
 	//with elements

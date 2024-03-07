@@ -22,12 +22,12 @@ class ErrorTest extends TestCase
 		$response->assertOk();
 
 		$response->assertSeeInOrder([
-			'An error has occurred default (default)',
+			'An error has occurred default',
 			'Example title',
-			'An error has occurred default (default)',
+			'An error has occurred default',
 			'All errors:',
-			'An error has occurred default (default)',
-			'An exception has occurred exception (exception-message)',
+			'An error has occurred default',
+			'An exception has occurred exception',
 		]);
 	}
 }

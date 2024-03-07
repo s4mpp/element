@@ -12,8 +12,8 @@ class SelectTest extends TestCase
 			'<x-element::form.select />'
 		);
 
-		$alert->assertSee('element--input-container');
-		$alert->assertDontSee('element--input-label');
+		$alert->assertSee('--element-input-container');
+		$alert->assertDontSee('--element-input-label');
 	}
 
 	// with options

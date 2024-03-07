@@ -12,10 +12,10 @@ class AlertTest extends TestCase
 			'<x-element::alert />'
 		);
 
-		$alert->assertSee('element--alert');
-		$alert->assertSee('element--alert');
-		$alert->assertSee('element--alert-content');
-		$alert->assertDontSee('element--alert-title');
+		$alert->assertSee('--element-alert');
+		$alert->assertSee('--element-alert');
+		$alert->assertSee('--element-alert-content');
+		$alert->assertDontSee('--element-alert-title');
 	}
 
 	// basic

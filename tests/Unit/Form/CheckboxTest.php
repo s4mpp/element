@@ -12,8 +12,8 @@ class CheckboxTest extends TestCase
 			'<x-element::form.checkbox />'
 		);
 
-		$alert->assertSee('element--input-container');
-		$alert->assertDontSee('element--input-label');
+		$alert->assertSee('--element-input-container');
+		$alert->assertDontSee('--element-input-label');
 	}
 
 	// with elements

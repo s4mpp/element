@@ -10,6 +10,9 @@ use Illuminate\Validation\Validator;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Contracts\Support\MessageBag as ContractMessageBag;
 
+/**
+ * @codeCoverageIgnore
+ */
 final class Error extends Component
 {
     /**
@@ -20,9 +23,8 @@ final class Error extends Component
     /**
      * Create a new component instance.
      */
-    public function __construct(public ?string $title = null, public ?string $key = null, public $provider = null)
+    public function __construct(public ?string $title = null, public ?string $key = null, public mixed $provider = null)
     {
-        
         if (!$this->key) {
             $this->messages = $this->getAllErrorsBags();
 
@@ -76,6 +78,7 @@ final class Error extends Component
 
     private function getErrors(): ?ViewErrorBag
     {
+        /** @var ViewErrorBag|null */
         return ($this->provider) ? $this->provider : Session::get('errors');
     }
 }
