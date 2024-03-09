@@ -59,6 +59,11 @@ final class Flash extends Component
         $flash_keys = Session::get('_flash.old');
 
         foreach ($flash_keys ?? [] as $key) {
+
+            if(in_array($key, ['errors', '_old_input'])){
+                continue;
+            }
+
             $messages[$key][] = Session::get($key);
         }
 
