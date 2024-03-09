@@ -11,6 +11,7 @@
 
 	'--element-button-default bg-white hover:bg-gray-100 ring-gray-300 outline-gray-300  text-gray-800' => ($style['is_default']),
 	'--element-button-secondary bg-gray-400 hover:bg-gray-500 ring-gray-400 outline-gray-400  text-white' => ($style['is_secondary']),
+	'--element-button-muted bg-gray-200 hover:bg-gray-300 ring-gray-300 outline-gray-300  text-gray-600' => ($style['is_muted']),
 	'--element-button-success bg-green-600 hover:bg-green-700 ring-green-600 outline-green-600  text-white' => ($style['is_success']),
 	'--element-button-danger bg-red-600  hover:bg-red-700 ring-red-600 outline-red-600  text-white' => ($style['is_danger']),
 	'--element-button-info bg-blue-600 hover:bg-blue-700 ring-blue-600 outline-blue-600  text-white' => ($style['is_info']),

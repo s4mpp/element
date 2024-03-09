@@ -1,3 +1,3 @@
-<div class="border-t items-center gap-4 pt-4 mt-4 flex justify-between">
+<div {{ $attributes->class(['pt-4 mt-4 bg-gray-100 -mx-6 px-6 pb-6 -mb-6']) }}>
 	{{ $slot }}
 </div>

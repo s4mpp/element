@@ -46,6 +46,7 @@
 				<div class="space-y-4">
 					<x-element::button context="default">Default</x-element::button>
 					<x-element::button context="secondary">Secondary</x-element::button>
+					<x-element::button context="muted">Muted</x-element::button>
 					<x-element::button context="success">Success</x-element::button>
 					<x-element::button context="danger">Danger</x-element::button>
 					<x-element::button context="info">Info</x-element::button>
@@ -57,6 +58,7 @@
 				<div class="space-y-4">
 					<x-element::button disabled context="default">Default</x-element::button>
 					<x-element::button disabled context="secondary">Secondary</x-element::button>
+					<x-element::button disabled context="muted">Muted</x-element::button>
 					<x-element::button disabled context="success">Success</x-element::button>
 					<x-element::button disabled context="danger">Danger</x-element::button>
 					<x-element::button disabled context="info">Info</x-element::button>
