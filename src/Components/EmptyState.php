@@ -5,12 +5,12 @@ namespace S4mpp\Element\Components;
 use Illuminate\View\Component;
 use Illuminate\Contracts\View\View;
 
-final class Table extends Component
+final class EmptyState extends Component
 {
     /**
      * Create a new component instance.
      */
-    public function __construct(public string $empty_message = 'No content')
+    public function __construct(public string $message = 'Empty list')
     {
     }
 
@@ -19,6 +19,6 @@ final class Table extends Component
      */
     public function render(): View|\Illuminate\Contracts\View\Factory
     {
-        return view('element::components.table');
+        return view('element::components.empty-state');
     }
 }

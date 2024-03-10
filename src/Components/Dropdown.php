@@ -5,12 +5,14 @@ namespace S4mpp\Element\Components;
 use Illuminate\View\Component;
 use Illuminate\Contracts\View\View;
 
-final class Table extends Component
+final class Dropdown extends Component
 {
     /**
      * Create a new component instance.
+     *
+     * @return void
      */
-    public function __construct(public string $empty_message = 'No content')
+    public function __construct(public string $title = 'Dropdown', public string $position = 'left')
     {
     }
 
@@ -19,6 +21,6 @@ final class Table extends Component
      */
     public function render(): View|\Illuminate\Contracts\View\Factory
     {
-        return view('element::components.table');
+        return view('element::components.dropdown.index');
     }
 }

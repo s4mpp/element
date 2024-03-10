@@ -11,7 +11,7 @@
 ]) }}>
 
 	@isset($start)     
-		<div class="  justify-center flex items-center">
+		<div {{ $start->attributes->class(['justify-center flex items-center']) }}>
 			{{ $start }}
 		</div>
 	@endisset
@@ -21,7 +21,7 @@
 	</div>
 
 	@isset($end)
-		<div class="  justify-center flex items-center">
+		<div {{ $end->attributes->class(['justify-center flex items-center']) }}>
 			{{ $end }}
 		</div>
 	@endisset

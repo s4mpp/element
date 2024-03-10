@@ -13,7 +13,7 @@ class TableTest extends TestCase
 		);
 
 		$table->assertSee('--element-main-table');
-		$table->assertSee('--element-table-empty');
+		$table->assertSee('--element-empty-state');
  		$table->assertDontSeeText('--element-table');
  		$table->assertDontSeeText('--element-thead');
  		$table->assertDontSeeText('--element-tbody');
@@ -38,7 +38,7 @@ class TableTest extends TestCase
 		);
 
 		$table->assertSee('--element-main-table');
-		$table->assertDontSee('--element-table-empty');
+		$table->assertDontSee('--element-empty-state');
  		$table->assertSee('--element-table');
  		$table->assertSee('--element-table-thead');
  		$table->assertSee('--element-table-tbody');
@@ -56,8 +56,7 @@ class TableTest extends TestCase
 		);
 
 		$table->assertSee('--element-main-table');
-		$table->assertSee('--element-table-empty');
- 		$table->assertSee('--element-table');
+		$table->assertSee('--element-empty-state');
  		$table->assertDontSee('--element-table-thead');
  		$table->assertDontSee('--element-table-tbody');
 	}

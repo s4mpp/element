@@ -10,7 +10,7 @@
 		<link rel="stylesheet" href="{{ asset('vendor/element/style.css') }}">
 	</head>
 	<body class="h-full">
-		<div class="container mx-auto my-4">
+		<div class="container mx-auto my-4 px-4">
 
 			<h1 class="text-gray-700 text-lg font-semibold mb-7 border-b  flex justify-start items-center">
 				@yield('title')

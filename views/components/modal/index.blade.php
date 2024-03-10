@@ -22,7 +22,7 @@
 			x-transition:leave="ease-in duration-200" 
 			x-transition:leave-start="opacity-100 translate-y-0 sm:scale-100"
 			x-transition:leave-end="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95" 
-			class="--element-modal-dialog relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg">
+			class="--element-modal-dialog relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all sm:my-8 min-w-full sm:min-w-96 sm:w-full sm:max-w-lg">
 			
 			<div class="bg-white px-4 pt-5 sm:p-6 sm:pb-4 mb-4 border-b">
 				<div class="flex justify-start align-center items-center">
@@ -54,7 +54,7 @@
 			<div class="bg-white px-4 pb-6 sm:px-6">
 
 				@if($subtitle)
-					<div class="mt-0 --element-modal-subtitle text-center py-4">
+					<div class="mt-0 --element-modal-subtitle py-4">
 						<p class="text-base text-gray-700">{{ $subtitle }}</p>
 					</div>
 				@endif

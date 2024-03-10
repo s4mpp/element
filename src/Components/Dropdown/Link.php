@@ -1,16 +1,19 @@
 <?php
 
-namespace S4mpp\Element\Components;
+namespace S4mpp\Element\Components\Dropdown;
 
 use Illuminate\View\Component;
 use Illuminate\Contracts\View\View;
+use S4mpp\Element\Traits\IsClickable;
 
-final class Table extends Component
+final class Link extends Component
 {
-    /**
+	/**
      * Create a new component instance.
+     *
+     * @return void
      */
-    public function __construct(public string $empty_message = 'No content')
+    public function __construct(public bool $danger = false)
     {
     }
 
@@ -19,6 +22,6 @@ final class Table extends Component
      */
     public function render(): View|\Illuminate\Contracts\View\Factory
     {
-        return view('element::components.table');
+        return view('element::components.dropdown.item', ['element' => 'a']);
     }
 }

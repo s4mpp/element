@@ -12,11 +12,5 @@ final class ElementServiceProvider extends ServiceProvider
         Blade::componentNamespace('S4mpp\\Element\\Components', 'element');
 
         $this->loadViewsFrom(__DIR__.'/../../views', 'element');
-
-        if ($this->app->runningInConsole()) {
-            $this->publishes([
-                __DIR__.'/../../style/dist.css' => public_path('vendor/element/style.css'),
-            ], 'element-assets');
-        }
     }
 }

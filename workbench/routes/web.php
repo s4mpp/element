@@ -18,6 +18,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::view('/badges', 'elements.badges')->name('badges');
 Route::view('/buttons-and-links', 'elements.buttons-and-links')->name('buttons-and-links');
+Route::view('/dropdowns', 'elements.dropdowns')->name('dropdowns');
 Route::view('/cards', 'elements.cards')->name('cards');
 Route::view('/icons', 'elements.icons')->name('icons');
 Route::view('/modals', 'elements.modals')->name('modals');
@@ -25,6 +26,7 @@ Route::view('/slide-overs', 'elements.slide-overs')->name('slide-overs');
 Route::view('/inputs', 'elements.inputs')->name('inputs');
 Route::view('/inputs', 'elements.inputs')->name('inputs');
 Route::view('/tables', 'elements.tables')->name('tables');
+Route::view('/empty-states', 'elements.empty-states')->name('empty-states');
 
 
 Route::view('/alerts', 'elements.alerts')->name('alerts');

@@ -69,13 +69,13 @@
 	<div>
 		<h2 class="font-semibold mb-1">Default (outline)</h2>
 		<div class="space-y-4">
-			<div class="flex gap-1 justify-between">
+			<div class="flex gap-1 justify-between flex-wrap">
 				@foreach($icons as $icon)
-					<x-element::icon name="{{ $icon }}" />
+					<x-element::icon name="{{ $icon }}" class="w-12" />
 				@endforeach
 			</div>
 
-			<div class="flex gap-1 justify-between">
+			<div class="flex gap-1 justify-between flex-wrap">
 				@foreach($icons as $icon)
 					<x-element::icon name="{{ $icon }}"  class="w-12 h-12 bg-red-100 text-blue-500" />
 				@endforeach
@@ -86,21 +86,21 @@
 	<div>
 		<h2 class="font-semibold mb-1">Solid</h2>
 		<div class="space-y-4">
-			<div class="flex gap-1 justify-between">
+			<div class="flex gap-1 justify-between flex-wrap">
 				@foreach($icons as $icon)
-					<x-element::icon name="{{ $icon }}" solid />
+					<x-element::icon name="{{ $icon }}" solid  class="w-5 "/>
 				@endforeach
 			</div>
 
-			<div class="flex gap-1 justify-between">
+			<div class="flex gap-1 justify-between flex-wrap">
 				@foreach($icons as $icon)
 					<x-element::icon name="{{ $icon }}" mini class="w-5 h-5" />
 				@endforeach
 			</div>
 			
-			<div class="flex gap-1 justify-between">
+			<div class="flex gap-1 justify-between flex-wrap">
 				@foreach($icons as $icon)
-					<x-element::icon name="{{ $icon }}"  class="{{  Arr::random($colors) }}" />
+					<x-element::icon name="{{ $icon }}"  class="w-5 {{  Arr::random($colors) }}" />
 				@endforeach
 			</div>
 		</div>
